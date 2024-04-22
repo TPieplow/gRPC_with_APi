@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option csharp_namespace = "Grpc.Client";
+
+package borrow;
+
+service BorrowService {
+ 
+  rpc Borrow (BorrowRequest) returns (BorrowResponse);
+  rpc UnBorrow (UnBorrowRequest) returns (UnBorrowResponse);
+}
+
+message BorrowRequest {
+  string name = 1;
+}
+
+message BorrowResponse {
+	string message = 1;
+}
+
+message UnBorrowRequest {
+  string name = 1;
+}
+
+message UnBorrowResponse {
+	string message = 1;
+}
